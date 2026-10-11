@@ -88,7 +88,15 @@ NAT lets many private devices share one public IP by rewriting addresses at the 
 ---
 
 ## My own takeaways
-- (Add what clicked for you, what confused you, and your quiz score)
+- Knowing the OSI layers is less about memorizing them and more about asking "at which layer is this happening?" It tells me which device, log, or attack I'm dealing with.
+- The TCP three-way handshake (SYN, SYN-ACK, ACK) is the baseline. A flood of SYNs with no ACK back is not normal traffic.
+- The first thing to check on any alert is whether an IP is private (`10.x`, `172.16-31.x`, `192.168.x`) or public. That tells me if traffic is internal or coming from outside.
+- NAT hides internal machines behind one public IP, so I need the firewall/NAT logs to find which internal host actually made a connection.
+- Switches use MAC addresses, routers use IP addresses, and firewalls decide what is allowed. Knowing which device logs what tells me where to look.
+- Most real attacks cross from a WAN (the Internet) into a LAN, so the network edge is where I expect to find the first evidence.
+
+**Quiz score:** _(add yours)_
+**What confused me / what I want to revisit:** _(add yours, for example subnetting or CIDR)_
 
 ## Related notes
 - [Windows Fundamentals](02-windows-fundamentals.md)
